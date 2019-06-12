@@ -1,13 +1,15 @@
 class Cell {
-    constructor(x, y, size, position) {
+    constructor(x, y, size, position, color) {
         this.x = x;
         this.y = y;
         this.size = size;
         this.position = position;
+        this._color = color
     }
 
     draw() {
-        const { x, y, size } = this;
+        const { x, y, size, _color } = this;
+        fill(_color)
         rect(x, y, size, size, 10);
     }
 
