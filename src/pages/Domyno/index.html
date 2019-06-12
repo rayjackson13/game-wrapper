@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Domyno | Register Game</title>
+    <meta property="og:url" content="">
+    <meta property="og:title" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+
+<body>
+    <main>
+        <section class="domyno-register__head">
+            <h1 class="jumbotron domyno-register__head__title">Domyno | Register Your Game</h1>
+        </section>
+        <section>
+            <form action="javascript:void(0);" onsubmit="submitForm()" class="container">
+                <div class="form-group">
+                    <label class="form-label">
+                        Your name:
+                        <input id="playerName" type="text" class="form-control" placeholder="HavanaPlayer701" value="HavanaPlayer701" required>
+                    </label>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="form-label">
+                                Field width:
+                                <input id="fieldWidth" type="number" class="form-control" placeholder="3" value="3" min="3" max="50" required>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label class="form-label">
+                                Field height:
+                                <input id="fieldHeight" type="number" class="form-control" placeholder="3" value="3" min="3" max="50" required>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-large btn-light">Submit</button>
+            </form>
+        </section>
+    </main>
+    <script src="/js/domyno/register.js"></script>
+</body>
+
+</html>
