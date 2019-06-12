@@ -61,13 +61,23 @@ gulp.task('babel', function () {
 });
 
 gulp.task('html-build', function () {
-  gulp.src('src/pages/**/*.html')
-    .pipe(htmlbeautify({
-      indentSize: 2
-    }))
-    .pipe(htmlmin({ collapseWhitespace: true }))
+  gulp.src(['src/pages/**/*'])
+    // .pipe(htmlbeautify({
+    //   indentSize: 2
+    // }))
+    // .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('dist/html'));
 });
+
+// gulp.task('html-vendors', function() {
+//   gulp.src(['src/pages/**/*'])
+//   // .pipe(htmlbeautify({
+//   //   indentSize: 2
+//   // }))
+//   // .pipe(htmlmin({ collapseWhitespace: true }))
+//   .pipe(gulp.dest('dist/html'));
+
+// })
 
 gulp.task('css-build', ['sass'], function () {
   return gulp.src(['src/css/**/*.css'])
@@ -76,7 +86,7 @@ gulp.task('css-build', ['sass'], function () {
 });
 
 gulp.task('js-build', ['babel'], function () {
-  return gulp.src(['src/js/*.js'])
+  return gulp.src(['src/js/**/*.js'])
     // .pipe(minifyJS())
     .pipe(gulp.dest('dist/js'));
 });
@@ -111,7 +121,7 @@ gulp.task('revision:rename', ['build:source'], () => {
 })
 
 gulp.task('revision:update', ['revision:rename'], () => {
-  return gulp.src(['dist/manifest.json', 'dist/**/*.html'])
+  return gulp.src(['dist/manifest.json', 'dist/html/index.html'])
       .pipe(collector())
       .pipe(gulp.dest('dist'))
 })
@@ -122,4 +132,4 @@ gulp.task('build', () => {
 
 gulp.task('build:source', ['html-build', 'css-build', 'js-build', 'img-build', 'font-build', 'access']);
 
-gulp.task('default', ['babel', 'htmlbeautify', 'sass', 'serve']);
+gulp.task('default', ['babel', 'sass', 'serve']);

@@ -29,8 +29,8 @@
   },
   "scripts": {
     "test": "./node_modules/.bin/gulp",
-    "build": "./node_modules/.bin/gulp build"
+    "build": "./node_modules/.bin/gulp build:source"
   },
-  "author": "AppTech",
+  "author": "RayJackson, Vlad Suzenko, Kanat Askarov",
   "license": "ISC"
 }
