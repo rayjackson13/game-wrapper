@@ -4,12 +4,12 @@ class Cell {
         this.y = y;
         this.size = size;
         this.position = position;
-        this._color = color
+        this._color = color;
     }
 
     draw() {
         const { x, y, size, _color } = this;
-        fill(_color)
+        fill(_color);
         rect(x, y, size, size, 10);
     }
 
